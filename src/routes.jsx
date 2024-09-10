@@ -4,6 +4,7 @@ import Women from './pages/Women'
 import Men from './pages/Men'
 import Jewelery from './pages/Jewelery'
 import WishList from './pages/WishList'
+import Product from './pages/Product'
 
 
 const routes = [
@@ -16,6 +17,7 @@ const routes = [
             { path: "men", element: <Men /> },
             { path: "jewelery", element: <Jewelery /> },
             { path: "wishlist", element: <WishList /> },
+            { path: "product", element: <Product />},
         ],
     },
 ];

@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import { useOutletContext, useNavigate } from "react-router-dom";
+
 
 function Women() {
     const [women, setWomen] = useState()
+    const [selectedProduct, setSelectedProduct] = useOutletContext();
+    const navigate = useNavigate()
 
     useEffect(() => {
         const fetchImage = async() => {
@@ -17,10 +21,15 @@ function Women() {
         fetchImage();
     }, []);
 
-    const handleClick = () => {
-        console.log("clicked")
+    const handleAddToCart = (product) => {
+        console.log("add to cart", product)
+        setSelectedProduct(product)
     }
 
+    const handleViewDetails = (product) => {
+        setSelectedProduct(product);
+        navigate('/product')
+    }
     if (!women) return "loading";
 
     return (
@@ -31,7 +40,9 @@ function Women() {
                     <img src={res.image}></img>
                     <p>{res.title}</p>
                     <p>${res.price}</p>
-                    <button type="button" onClick={handleClick}>Add to Cart</button>
+                    <button type="button" onClick={() => handleViewDetails(res)}>View Details</button>
+                    <button type="button" onClick={() => handleAddToCart(res)}>Add to Cart</button>
+
                 </div>
             ))
             }

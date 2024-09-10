@@ -5,11 +5,12 @@ import Header from './components/header'
 
 
 function App() {
+  const [selectedProduct, setSelectedProduct] = useState();
 
   return (
     <>
       <Header />
-      <Outlet />
+      <Outlet context={[selectedProduct, setSelectedProduct]}/>
     </>
   )
 }
