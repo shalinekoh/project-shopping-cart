@@ -3,7 +3,9 @@ import { Link } from "react-router-dom"
 function Header() {
     return (
         <>
-            <h1>ZARR</h1>
+            <Link to="/">
+                <h1>ZARR</h1>
+            </Link>
             <ul>
                 <Link to="women">Women</Link>
                 <Link to="men">Men</Link>
