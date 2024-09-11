@@ -5,6 +5,7 @@ import Men from './pages/Men'
 import Jewelery from './pages/Jewelery'
 import WishList from './pages/WishList'
 import Product from './pages/Product'
+import ShoppingCart from './pages/shoppingCart'
 
 
 const routes = [
@@ -18,6 +19,7 @@ const routes = [
             { path: "jewelery", element: <Jewelery /> },
             { path: "wishlist", element: <WishList /> },
             { path: "product/:id", element: <Product />},
+            { path: "cart", element: <ShoppingCart />},
         ],
     },
 ];
