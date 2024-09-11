@@ -21,7 +21,7 @@ function WishList() {
         handleRemove(product);
     }
 
-    if (wishList.length === 0) return "Nothing in cart"
+    if (wishList.length === 0) return "Nothing in wishlist"
 
     return (
         <div className="wishlist">
