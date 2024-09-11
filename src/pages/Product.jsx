@@ -1,8 +1,7 @@
-import { useParams, useOutletContext } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 
 function Product() {
-    const {id } = useParams();
-    const [selectedProduct, setSelectedProduct] = useOutletContext();
+    const [selectedProduct, setSelectedProduct, cart, setCart, handleAddToCart] = useOutletContext();
     if (!selectedProduct ) return "loading";
 
     return (
@@ -10,7 +9,9 @@ function Product() {
             <img src={selectedProduct.image}></img>
             <p>{selectedProduct.title}</p>
             <p>$ {selectedProduct.price}</p>
-            <button type="button">Add to Cart</button>
+            <button type="button" onClick={() => handleAddToCart(selectedProduct)}>
+                Add to Cart
+            </button>
             <p>{selectedProduct.description}</p>
         </>
     )

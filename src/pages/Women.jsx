@@ -5,7 +5,7 @@ import { Outlet } from 'react-router'
 
 function Women() {
     const [women, setWomen] = useState()
-    const [selectedProduct, setSelectedProduct, cart, setCart] = useOutletContext();
+    const [selectedProduct, setSelectedProduct, cart, setCart, handleAddToCart] = useOutletContext();
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -21,34 +21,6 @@ function Women() {
         };
         fetchImage();
     }, []);
-
-    const handleAddToCart = (product) => {
-        alert("Added to cart")
-        console.log(cart)
-        setCart((currentCart) => {
-            const itemExists = currentCart.find((item) => item.title === product.title);
-
-            if (itemExists) {
-                return currentCart.map((item) =>
-                        item.title === product.title
-                        ? {...item, quantity: item.quantity + 1}
-                        : item )
-
-            }
-            else {
-                return [
-                    ...currentCart,
-                    {
-                        imgUrl: product.image,
-                        title: product.title,
-                        quantity: 1,
-                        price: product.price,
-                        id: crypto.randomUUID()
-                    }
-                ]
-            }
-        })
-    }
 
     const handleViewDetails = (product) => {
         setSelectedProduct(product);
@@ -66,7 +38,6 @@ function Women() {
                     <p>${res.price}</p>
                     <button type="button" onClick={() => handleViewDetails(res)}>View Details</button>
                     <button type="button" onClick={() => handleAddToCart(res)}>Add to Cart</button>
-
                 </div>
             ))
             }
