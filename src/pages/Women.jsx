@@ -4,7 +4,15 @@ import { useOutletContext } from "react-router-dom";
 
 function Women() {
     const [women, setWomen] = useState()
-    const [selectedProduct, setSelectedProduct, cart, setCart, handleAddToCart, handleViewDetails] = useOutletContext();
+    const [selectedProduct,
+        setSelectedProduct,
+        cart,
+        setCart,
+        handleAddToCart,
+        handleViewDetails,
+        wishList,
+        setWishList,
+        handleWishList, ] = useOutletContext();
 
     useEffect(() => {
         const fetchImage = async() => {
@@ -20,6 +28,8 @@ function Women() {
         fetchImage();
     }, []);
 
+    const isWishListed = (product) => wishList.some((item) => item.title === product.title)
+
     if (!women) return "loading";
 
     return (
@@ -28,6 +38,9 @@ function Women() {
             {women.map((res) => (
                 <div key={res.id} className="productCard">
                     <img src={res.image}></img>
+                    <button onClick={()=>handleWishList(res, isWishListed(res))}>
+                        { isWishListed(res) ? "♥️" : "♡"}
+                    </button>
                     <p>{res.title}</p>
                     <p>${res.price}</p>
                     <button type="button" onClick={() => handleViewDetails(res)}>View Details</button>

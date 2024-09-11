@@ -34,10 +34,11 @@ function ShoppingCart() {
     if (cart.length === 0) return "Nothing in cart";
     return (
         <div className="cart">
+            <h2>Shopping Cart</h2>
             {cart.map((item) => (
                 <div key={item.id} className="cartItem">
                     <img src={item.imgUrl} />
-                    <h2>{item.title}</h2>
+                    <h3>{item.title}</h3>
                     <p>${Math.round(item.quantity * item.price*100)/100} </p>
                     <div className="quantity">
                         <button onClick={() => handleMinus(item.id)}>-</button>
