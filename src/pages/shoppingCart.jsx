@@ -1,7 +1,15 @@
 import { useOutletContext } from "react-router-dom";
 
 function ShoppingCart() {
-    const [selectedProduct, setSelectedProduct, cart, setCart] = useOutletContext();
+    const [selectedProduct,
+        setSelectedProduct,
+        cart,
+        setCart,
+        handleAddToCart,
+        handleViewDetails,
+        wishList,
+        setWishList,
+        handleWishList, ] = useOutletContext();
 
     const handleMinus = (id) => {
         const quantity = cart.find((item) => item.id === id).quantity - 1;
@@ -32,6 +40,7 @@ function ShoppingCart() {
 
     if (!cart) return "Loading...";
     if (cart.length === 0) return "Nothing in cart";
+
     return (
         <div className="cart">
             <h2>Shopping Cart</h2>
