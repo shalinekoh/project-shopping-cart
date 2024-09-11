@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
+import { useOutletContext } from "react-router-dom";
 
 function Jewelery() {
-    const [jewelery, setJewelery] = useState()
+    const [jewelery, setJewelery] = useState();
+    const [selectedProduct, setSelectedProduct, cart, setCart, handleAddToCart, handleViewDetails] = useOutletContext();
 
     useEffect(() => {
         const fetchImage = async() => {
@@ -17,10 +19,6 @@ function Jewelery() {
         fetchImage();
     }, []);
 
-    const handleClick = () => {
-        console.log("clicked")
-    }
-
     if (!jewelery) return "loading";
 
     return (
@@ -31,7 +29,8 @@ function Jewelery() {
                     <img src={res.image}></img>
                     <p>{res.title}</p>
                     <p>${res.price}</p>
-                    <button type="button" onClick={handleClick}>Add to Cart</button>
+                    <button type="button" onClick={() => handleViewDetails(res)}>View Details</button>
+                    <button type="button" onClick={() => handleAddToCart(res)}>Add to Cart</button>
                 </div>
             ))
             }
