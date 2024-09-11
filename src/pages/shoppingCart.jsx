@@ -38,6 +38,7 @@ function ShoppingCart() {
                 <div key={item.id} className="cartItem">
                     <img src={item.imgUrl} />
                     <h2>{item.title}</h2>
+                    <p>{Math.round(item.quantity * item.price*100)/100} </p>
                     <div className="quantity">
                         <button onClick={() => handleMinus(item.id)}>-</button>
                         <input type="number" value={item.quantity} min="0" max="10"
@@ -49,6 +50,10 @@ function ShoppingCart() {
                 </div>
                 ))
             }
+            <div className="total">
+                <p>Total Items: {cart.reduce((acc, item) => acc + item.quantity , 0)}</p>
+                <p>Total Amount: ${Math.round(cart.reduce((acc, item) => acc + (item.quantity * item.price), 0) * 100) / 100}</p>
+            </div>
         </div>
     )
 }

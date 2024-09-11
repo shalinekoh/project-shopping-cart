@@ -42,6 +42,7 @@ function Women() {
                         imgUrl: product.image,
                         title: product.title,
                         quantity: 1,
+                        price: product.price,
                         id: crypto.randomUUID()
                     }
                 ]
