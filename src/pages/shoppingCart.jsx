@@ -53,6 +53,7 @@ function ShoppingCart() {
             <div className="total">
                 <p>Total Items: {cart.reduce((acc, item) => acc + item.quantity , 0)}</p>
                 <p>Total Amount: ${Math.round(cart.reduce((acc, item) => acc + (item.quantity * item.price), 0) * 100) / 100}</p>
+                <button>CHECK OUT</button>
             </div>
         </div>
     )
