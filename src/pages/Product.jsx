@@ -1,8 +1,10 @@
-import { useOutletContext } from "react-router-dom";
+import { useParams, useOutletContext } from "react-router-dom";
 
 function Product() {
+    const {id } = useParams();
     const [selectedProduct, setSelectedProduct] = useOutletContext();
-    if (!selectedProduct) return loading;
+    if (!selectedProduct ) return "loading";
+
     return (
         <>
             <img src={selectedProduct.image}></img>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useOutletContext, useNavigate } from "react-router-dom";
+import { Outlet } from 'react-router'
 
 
 function Women() {
@@ -22,13 +23,13 @@ function Women() {
     }, []);
 
     const handleAddToCart = (product) => {
-        console.log("add to cart", product)
+        alert("Added to cart")
         setSelectedProduct(product)
     }
 
     const handleViewDetails = (product) => {
         setSelectedProduct(product);
-        navigate('/product')
+        navigate(`/product/${product.id}`)
     }
     if (!women) return "loading";
 

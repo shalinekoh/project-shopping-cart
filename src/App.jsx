@@ -5,7 +5,7 @@ import Header from './components/header'
 
 
 function App() {
-  const [selectedProduct, setSelectedProduct] = useState();
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   return (
     <>

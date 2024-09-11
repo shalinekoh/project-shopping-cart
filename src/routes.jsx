@@ -17,7 +17,7 @@ const routes = [
             { path: "men", element: <Men /> },
             { path: "jewelery", element: <Jewelery /> },
             { path: "wishlist", element: <WishList /> },
-            { path: "product", element: <Product />},
+            { path: "product/:id", element: <Product />},
         ],
     },
 ];
