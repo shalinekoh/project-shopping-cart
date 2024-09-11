@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Outlet } from 'react-router'
+import { useNavigate } from "react-router-dom"
 import './App.css'
 import Header from './components/header'
 
@@ -7,6 +8,7 @@ import Header from './components/header'
 function App() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [cart, setCart] = useState([])
+  const navigate = useNavigate()
 
   const handleAddToCart = (product) => {
     alert("Added to cart")
@@ -19,7 +21,6 @@ function App() {
                     item.title === product.title
                     ? {...item, quantity: item.quantity + 1}
                     : item )
-
         }
         else {
             return [
@@ -36,10 +37,23 @@ function App() {
     })
 }
 
+const handleViewDetails = (product) => {
+  setSelectedProduct(product);
+  navigate(`/product/${product.id}`)
+}
+
   return (
     <>
       <Header />
-      <Outlet context={[selectedProduct, setSelectedProduct, cart, setCart, handleAddToCart]}/>
+      <Outlet context={[
+        selectedProduct,
+        setSelectedProduct,
+        cart,
+        setCart,
+        handleAddToCart,
+        handleViewDetails,
+        ]}
+      />
     </>
   )
 }

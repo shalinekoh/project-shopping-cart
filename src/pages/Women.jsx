@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { useOutletContext, useNavigate } from "react-router-dom";
-import { Outlet } from 'react-router'
+import { useOutletContext } from "react-router-dom";
 
 
 function Women() {
     const [women, setWomen] = useState()
-    const [selectedProduct, setSelectedProduct, cart, setCart, handleAddToCart] = useOutletContext();
-    const navigate = useNavigate()
+    const [selectedProduct, setSelectedProduct, cart, setCart, handleAddToCart, handleViewDetails] = useOutletContext();
 
     useEffect(() => {
         const fetchImage = async() => {
@@ -22,10 +20,6 @@ function Women() {
         fetchImage();
     }, []);
 
-    const handleViewDetails = (product) => {
-        setSelectedProduct(product);
-        navigate(`/product/${product.id}`)
-    }
     if (!women) return "loading";
 
     return (
