@@ -5,7 +5,7 @@ import { Outlet } from 'react-router'
 
 function Women() {
     const [women, setWomen] = useState()
-    const [selectedProduct, setSelectedProduct, setCart] = useOutletContext();
+    const [selectedProduct, setSelectedProduct, cart, setCart] = useOutletContext();
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -24,16 +24,16 @@ function Women() {
 
     const handleAddToCart = (product) => {
         alert("Added to cart")
+        console.log(cart)
         setCart((currentCart) => {
             const itemExists = currentCart.find((item) => item.title === product.title);
 
             if (itemExists) {
-                return [
-                    currentCart.map((item) =>
+                return currentCart.map((item) =>
                         item.title === product.title
                         ? {...item, quantity: item.quantity + 1}
                         : item )
-                ]
+
             }
             else {
                 return [

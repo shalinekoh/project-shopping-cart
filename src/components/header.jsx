@@ -14,7 +14,7 @@ function Header() {
             <ul>
                 <Link to="wishlist">Wish List</Link>
                 <Link>Search</Link>
-                <Link>Cart</Link>
+                <Link to="cart">Cart</Link>
             </ul>
         </>
     )
