@@ -38,7 +38,7 @@ function ProductCard({ categoryList, categoryName }) {
                     <button
                         type="button"
                         onClick={() => handleViewDetails(res)}
-                        className="text-black border py-2 px-4 rounded transition-transform transform hover:bg-primary hover:text-white hover:shadow-lg"
+                        className="btn"
                     >
                         View Details
                     </button>
@@ -46,7 +46,7 @@ function ProductCard({ categoryList, categoryName }) {
                     <button
                         type="button"
                         onClick={() => handleAddToCart(res)}
-                        className="text-black border py-2 px-4 rounded transition-transform transform hover:bg-primary hover:text-white hover:shadow-lg"
+                        className="btn"
                     >
                         Add to Cart
                     </button>

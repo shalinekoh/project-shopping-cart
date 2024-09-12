@@ -13,3 +13,7 @@
 .nav-hover {
     @apply hover:border-b-2 hover:border-black pb-1
 }
+
+.btn {
+    @apply text-black border py-2 px-4 rounded transition-transform transform hover:bg-primary hover:text-white hover:shadow-lg
+}
