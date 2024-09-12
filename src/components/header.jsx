@@ -4,7 +4,7 @@ function Header() {
     return (
         <>
             <Link to="/">
-                <h1>ZARR</h1>
+                <h1 className="color-bg-red underline">ZARR</h1>
             </Link>
             <ul>
                 <Link to="women">Women</Link>
