@@ -32,7 +32,7 @@ function ProductCard({ categoryList, categoryName }) {
                     <p className="font-semibold text-lg">${res.price}</p>
                     </div>
 
-                    <p className="font-medium text-md mb-2">{res.title}</p>
+                    <p className="font-medium text-md mb-2 h-16 overflow-hidden">{res.title}</p>
 
                     <div className="flex flex-col space-y-2">
                     <button
