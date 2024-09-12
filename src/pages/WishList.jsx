@@ -11,7 +11,6 @@ function WishList() {
         setWishList,
         handleWishList, ] = useOutletContext();
 
-    console.log(wishList)
     const handleRemove = (product) => {
         setWishList((currentList) => currentList.filter((item) => item.title !== product.title))
     }
