@@ -62,7 +62,7 @@ const handleWishList = (product, isWishListed) => {
 
   return (
     <div className="flex flex-col relative">
-      <Header className="absolute top-0 left-0"/>
+      <Header />
       <Outlet context={[
         selectedProduct,
         setSelectedProduct,

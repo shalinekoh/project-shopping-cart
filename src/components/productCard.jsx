@@ -15,7 +15,7 @@ function ProductCard({ categoryList, categoryName }) {
     const isWishListed = (product) => wishList.some((item) => item.title === product.title)
 
     return (
-        <div className="mb-6 mx-6">
+        <div className="mb-6 mx-6 min-h-screen">
             <h2 className="text-3xl font-bold mt-28 mb-6 text-center">{categoryName}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {categoryList.map((res) => (
