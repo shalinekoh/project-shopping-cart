@@ -61,7 +61,7 @@ const handleWishList = (product, isWishListed) => {
 }
 
   return (
-    <>
+    <div className="flex flex-col w-screen h-screen">
       <Header />
       <Outlet context={[
         selectedProduct,
@@ -76,7 +76,7 @@ const handleWishList = (product, isWishListed) => {
         ]}
       />
       <Footer />
-    </>
+    </div>
   )
 }
 
