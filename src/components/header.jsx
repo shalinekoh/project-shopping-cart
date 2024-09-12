@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Header() {
     return (
-        <div className="p-4">
+        <div className="fixed top-0 w-full bg-white z-50 p-4 shadow-md">
             <div className="flex justify-between items-center">
                 {/* Logo and Main Navigation */}
                 <div className="flex items-center gap-8">

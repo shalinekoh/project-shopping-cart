@@ -8,6 +8,9 @@ export default {
     extend: {
       fontFamily :{
         logo: ["Bruno Ace SC"]
+      },
+      colors: {
+        primary: `#b0a389`
       }
     },
   },

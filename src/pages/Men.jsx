@@ -21,10 +21,7 @@ function Men() {
     if (!men) return "loading";
 
     return (
-        <>
-            <h2>Men's Clothing</h2>
-            <ProductCard categoryList={men} />
-        </>
+        <ProductCard categoryList={men} categoryName="Men's Clothing"/>
     )
 }
 

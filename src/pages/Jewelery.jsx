@@ -21,10 +21,7 @@ function Jewelery() {
     if (!jewelery) return "loading";
 
     return (
-        <>
-            <h2>Jewelery</h2>
-            <ProductCard categoryList={jewelery} />
-        </>
+        <ProductCard categoryList={jewelery} categoryName="Jewelery"/>
     )
 }
 
