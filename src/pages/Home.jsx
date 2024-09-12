@@ -1,12 +1,14 @@
 import './Home.css';
+import { Link } from "react-router-dom";
 import HomeCard from '../components/homeCard';
 
 function Home() {
     return (
         <div className="body">
-            <HomeCard imgSrc="/photo1.jpeg" categoryName="women"/>
-            <HomeCard imgSrc="/photo2.jpeg" categoryName="men"/>
-            <HomeCard imgSrc="/photo3.jpeg" categoryName="jewelery"/>
+            <img className="landscape-img" src="/photo1.jpeg" alt="Home" />
+            <Link to='women'>
+                <button type="button">Shop Now</button>
+            </Link>
         </div>
     );
 }
