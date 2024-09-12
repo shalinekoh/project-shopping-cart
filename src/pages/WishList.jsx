@@ -36,7 +36,7 @@ function WishList() {
                                 className="w-32 h-32 object-contain rounded-md"
                             />
                             <div className="flex-1">
-                                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                                <h3 className="text-xl font-semibold mb-2 hover:cursor-pointer" onClick={() => handleViewDetails(item)}>{item.title}</h3>
                                 <p className="text-lg font-bold text-gray-700 mb-2">$ {item.price}</p>
                                 <div className="flex gap-4">
                                     <button
