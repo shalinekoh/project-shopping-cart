@@ -18,8 +18,6 @@ function Jewelery() {
         fetchImage();
     }, []);
 
-    if (!jewelery) return "loading";
-
     return (
         <ProductCard categoryList={jewelery} categoryName="Jewelery"/>
     )

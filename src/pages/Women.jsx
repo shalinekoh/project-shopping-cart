@@ -18,8 +18,6 @@ function Women() {
         fetchImage();
     }, []);
 
-    if (!women) return "loading";
-
     return (
         <ProductCard categoryList={women} categoryName="Women's Clothing"/>
     )
