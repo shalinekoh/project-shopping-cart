@@ -1,4 +1,5 @@
 import { useOutletContext } from "react-router-dom";
+import BackIcon from "../components/back";
 
 function Product() {
     const [selectedProduct,
@@ -16,8 +17,9 @@ function Product() {
     if (!selectedProduct) return "loading";
 
     return (
-        <div className="h-screen mx-auto max-w-4xl p-4 bg-white border rounded-lg shadow-md flex items-center justify-center">
-            <div className="flex flex-col md:flex-row items-center max-w-3xl w-full">
+        <div className="h-screen mx-auto max-w-4xl p-4 flex items-center justify-center">
+            <BackIcon />
+            <div className="h-screen mx-auto p-4 flex flex-col md:flex-row gap-4 items-center max-w-3xl w-full relative">
                 {/* Product Image */}
                 <div className="flex-shrink-0 w-full md:w-1/2 pr-4 mb-4 md:mb-0">
                     <img

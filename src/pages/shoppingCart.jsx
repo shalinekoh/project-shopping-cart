@@ -1,5 +1,6 @@
 import { useOutletContext } from "react-router-dom";
 import { Link } from "react-router-dom";
+import BackIcon from "../components/back";
 
 function ShoppingCart() {
     const [selectedProduct,
@@ -50,6 +51,7 @@ function ShoppingCart() {
                 </div>
             ) : (
                 <div>
+                    <BackIcon />
                     {cart.map((item) => (
                         <div key={item.id} className="bg-white md:w-1/2 mx-auto border rounded-lg shadow-md p-4 mb-4 flex items-center">
                             <img

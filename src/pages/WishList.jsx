@@ -1,5 +1,6 @@
 import { useOutletContext } from "react-router-dom";
 import { Link } from "react-router-dom";
+import BackIcon from "../components/back";
 
 function WishList() {
     const [selectedProduct,
@@ -32,6 +33,7 @@ function WishList() {
                 </div>
             ) : (
                 <div className="space-y-6 flex flex-col">
+                    <BackIcon />
                     {wishList.map((item) => (
                         <div key={item.id} className="bg-white md:w-1/2 mx-auto border rounded-lg shadow-md p-4 flex items-center space-x-4">
                             <img
