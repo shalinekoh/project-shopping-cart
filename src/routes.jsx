@@ -6,12 +6,18 @@ import Jewelery from './pages/Jewelery'
 import WishList from './pages/WishList'
 import Product from './pages/Product'
 import ShoppingCart from './pages/shoppingCart'
+import ScrollToTop from './components/ScrollToTop'
 
 
 const routes = [
     {
         path: "/",
-        element: <App />,
+        element: (
+            <>
+                <ScrollToTop />
+                <App />
+            </>
+        ),
         children: [
             { index: true, element: <Home /> },
             { path: "women", element: <Women /> },
