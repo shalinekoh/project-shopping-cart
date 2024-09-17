@@ -17,11 +17,11 @@ function Product() {
     if (!selectedProduct) return "loading";
 
     return (
-        <div className="h-screen mx-auto max-w-4xl p-4 flex items-center justify-center">
-            <BackIcon />
-            <div className="h-screen mx-auto p-4 flex flex-col md:flex-row gap-4 items-center max-w-3xl w-full relative">
+        <div className="flex flex-col h-screen mt-[60px]">
+            <div className="flex-grow p-4 md:p-8 lg:p-12 flex flex-col md:flex-row gap-4 items-center justify-center">
+                <BackIcon />
                 {/* Product Image */}
-                <div className="flex-shrink-0 w-full md:w-1/2 pr-4 mb-4 md:mb-0">
+                <div className="flex-shrink-0 w-full md:w-1/2 mb-4 md:mb-0">
                     <img
                         src={selectedProduct.image}
                         alt={selectedProduct.title}
@@ -32,8 +32,8 @@ function Product() {
                 {/* Product Details */}
                 <div className="w-full md:w-1/2 flex flex-col justify-between">
                     <p className="text-2xl font-semibold mb-2">{selectedProduct.title}</p>
-                    <div className="flex justify-between mb-4">
-                        <p className="text-lg font-bold text-gray-700 mr-4">$ {selectedProduct.price}</p>
+                    <div className="flex justify-between items-center mb-4">
+                        <p className="text-lg font-bold text-gray-700">$ {selectedProduct.price}</p>
                         <button
                             onClick={() => handleWishList(selectedProduct, isWishListed(selectedProduct))}
                             className="text-2xl hover:scale-110 text-red-800 focus:outline-none"
