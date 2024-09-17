@@ -1,4 +1,5 @@
 import { useOutletContext } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function ShoppingCart() {
     const [selectedProduct,
@@ -43,7 +44,10 @@ function ShoppingCart() {
         <div className="min-h-screen mt-24 bg-gray-100 p-6">
             <h2 className="text-3xl font-bold mb-6 text-center">Shopping Cart</h2>
             {cart.length === 0 ? (
-                <p className="text-center text-gray-600">Nothing in cart</p>
+                <div>
+                    <p className="text-center text-gray-600">Nothing in cart</p>
+                    <Link to="/women" className="flex justify-center mt-4 text-lg text-gray-600 hover:underline">Go Shopping</Link>
+                </div>
             ) : (
                 <div>
                     {cart.map((item) => (
